@@ -1,0 +1,73 @@
+// compress:true
+
+@import "vars";
+
+@font-face {
+	font-family: 'Cascadia Code PL Regular';
+	src: url('../fonts/cascadia_code_pl_regular.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/cascadia_code_pl_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/cascadia_code_pl_regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/cascadia_code_pl_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/cascadia_code_pl_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/cascadia_code_pl_regular.svg#cascadia_code_pl_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+html {
+    font-size: 15px;
+    height: 100%;
+    position: relative;
+
+    @media @mobile-sm {
+        min-height: none;
+    }
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    background: #1C1F25;
+    color: @white;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 0 0.8rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+// Blocks
+
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/modal";
+@import "blocks/left";
+@import "blocks/right";
+@import "blocks/center";

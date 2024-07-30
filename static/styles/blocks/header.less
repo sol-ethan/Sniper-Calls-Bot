@@ -1,0 +1,66 @@
+// main: ../style.less
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(28, 31, 37, 0.50);
+    backdrop-filter: blur(50px);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1740px;
+}
+
+.header__logo {
+    color: #FFF;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+
+    img {
+        display: block;
+        width: 31.5px;
+        height: 31.5px;
+    }
+}
+
+.header__wallet {
+    width: 226px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-start;
+    color: #FFF;
+font-family: Ubuntu;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+cursor: default;
+
+    img {
+        margin-right: 7px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .header__inner {
+        max-width: 1200px;
+    }
+}

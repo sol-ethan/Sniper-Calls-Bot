@@ -1,0 +1,226 @@
+// main: ../style.less
+
+.hide {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(4.949999809265137px);
+  top: 0;
+  z-index: 10000000;
+
+
+
+  &__inner {
+    display: flex;
+    max-width: 1250px;
+    width: 100%;
+    padding: 21px 23px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    height: 685px;
+    z-index: 10000000;
+    background: #282C33;
+
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    padding-right: 23px;
+
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__line {
+      display: flex;
+      justify-content: space-between;
+
+      &>.modal__left__select {
+        width: 49%;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      color: #FFF;
+      font-family: Ubuntu;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 23px;
+      cursor: default;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    &__title {
+      color: #FFF;
+      font-family: Ubuntu;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 106%;
+      margin-bottom: 6px;
+      cursor: default;
+    }
+
+    &__button {
+      background: #175195;
+      height: 60px;
+      color: #FFF;
+      text-align: center;
+      font-family: Ubuntu;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 200%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all .2s linear;
+
+
+      &:hover {
+        background: #175295c6;
+
+      }
+
+      ;
+    }
+
+    &__select {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 15px;
+
+      label {
+        color: rgba(255, 255, 255, 0.40);
+        text-align: left;
+        font-family: Ubuntu;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%;
+        letter-spacing: 0.32px;
+        margin-bottom: 5px;
+      }
+
+      input, &__input {
+        color: #FFF;
+        text-align: left;
+        font-family: Ubuntu;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%;
+        background: #1C1F25;
+        border: none;
+        height: 60px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        transition: all .2s linear;
+
+        &.select:hover {
+          background: #292d36;
+        }
+        
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: #FFF;
+          text-align: center;
+          font-family: Ubuntu;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 200%;
+        }
+      }
+
+      &__input__drop {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -60px;
+        z-index: 2;
+        width: 100%;
+        border-bottom: 2px solid #ffffff7f;
+
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: 56%;
+    background: #1C1F25;
+    display: flex;
+    flex-direction: column;
+
+    &__top {
+      min-height: 40px;
+      height: 40px;
+      width: 100%;
+      background: #1491FF;
+      padding: 0 11px;
+      display: flex;
+      align-items: center;
+      color: #1E372D;
+      font-family: Ubuntu;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    &__textarea {
+      background: #1C1F25;
+      width: 100%;
+      height: 100%;
+
+      padding: 10px;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: "Cascadia Code PL Regular";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      resize: none;
+      /* 19.6px */
+      letter-spacing: -0.28px;
+      transition: all .2s linear;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

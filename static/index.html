@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/img/logo.svg" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sniper Calls Bot</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="/img/logo.svg" alt="" srcset="" />
+          SNIPER CALLS BOT
+        </div>
+
+        <div class="header__wallet hide" id="headerWallet">
+          <img src="/img/wallet.svg" alt="" />
+          <span
+            ><span id="headerWalletBalance">555</span> SOL<span
+              class="header__wallet--gray"
+            ></span
+          ></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="left">
+          <div class="left__inner">
+            <div class="left__line1">
+              <div class="left__line1__left">
+                <img src="/img/sol.png" alt="" />
+
+                Solana
+                <p>(SOL)</p>
+              </div>
+
+              <div class="left__line1__right">
+                <div class="left__line1__right--top">
+                  <span id="SOLUSD"></span> USD
+                </div>
+                <div class="left__line1__right--bottom">
+                  <span id="SOLBTC"></span> BTC
+                </div>
+              </div>
+            </div>
+
+            <div class="left__line2">
+              <div class="left__line2__item">
+                <div class="left__line2__item--top">RANK</div>
+                <div class="left__line2__item--bottom">#5</div>
+              </div>
+              <div class="left__line2__item">
+                <div class="left__line2__item--top">CAP</div>
+                <div class="left__line2__item--bottom">80.22B</div>
+              </div>
+              <div class="left__line2__item">
+                <div class="left__line2__item--top">VOLUME</div>
+                <div class="left__line2__item--bottom">2.19B</div>
+              </div>
+            </div>
+
+            <div class="left__line3">Trading pairs</div>
+
+            <div class="left__table">
+              <div class="left__table__header">
+                <div class="left__table__header--item ticket">Ticker</div>
+                <div class="left__table__header--item price">Price</div>
+              </div>
+              <div class="left__table__body" id="traiding_pairs"></div>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <div class="glow" id="glow"></div>
+          <div class="center__inner" id="center1">
+            <div class="center__top">
+              <div class="center__title">
+                Before you start, configure the bot
+              </div>
+              <div class="center__button" onclick="openConfigure()">
+                <img src="/img/settings.svg" alt="" /><span>Configure</span>
+              </div>
+              <div class="center__description">
+                <div class="center__description__title">
+                  Sniper Calls Bot is a state-of-the-art automated trading tool
+                  developed by <span>Solana</span> experts, specifically
+                  designed for meme coins.
+                </div>
+                <div class="center__description__text">
+                  This bot leverages sophisticated algorithms to capitalize on
+                  low-liquidity and newly launched coins, using indicators to
+                  detect volume changes. Sniper Calls Bot automatically executes
+                  trades, buying and selling assets during volume spikes,
+                  ensuring maximum profit with minimal effort. Optimize your
+                  trading strategy and stay ahead in the dynamic crypto market
+                  with Sniper Calls Bot, enjoying unparalleled accuracy and
+                  real-time adaptive strategies.
+                </div>
+                <!-- <div class="center__description__text">
+                  Benefit from the bot's seamless integration with your existing trading platform, and experience the future of crypto trading today. Trust Sniper Calls Bot to keep you at the forefront of market opportunities.
+                </div> -->
+              </div>
+            </div>
+            <div class="center__statusbar yellow">
+              <div class="center__statusbar__left">
+                <img src="/img/loader.svg" alt="" />
+                <span id="console__status">Waiting for launch...</span>
+              </div>
+              <div class="center__statusbar__right">
+                <img src="/img/search.svg" alt="" />
+                <span>Search...</span>
+              </div>
+            </div>
+            <div class="center__console"></div>
+          </div>
+          <div class="center__inner hide" id="center2">
+            <div class="center__top">
+              <div class="center__alert hide" id="alert">
+                We don’t have Solana
+              </div>
+
+              <div class="center__deposit">
+                <div class="center__deposit__enter">
+                  <label for="amount">Enter SOL amount</label>
+                  <input type="text" name="" id="amount" placeholder="1 SOL" />
+                </div>
+
+                <div class="center__deposit__button" onclick="deposit()">
+                  Deposit
+                </div>
+
+                <div class="center__deposit__or">
+                  <div class="center__deposit__or--divider"></div>
+                  <div class="center__deposit__or--text">OR</div>
+                  <div class="center__deposit__or--divider"></div>
+                </div>
+
+                <div class="center__deposit__address" onclick="copyAddress()">
+                  <span id="addressToDeposit"></span>
+                  <img src="/img/copy.svg" alt="" srcset="" />
+                </div>
+
+                <div
+                  class="center__deposit__button down"
+                  onclick="depositedToAddress()"
+                >
+                  Already deposited to this address
+                </div>
+              </div>
+            </div>
+            <div class="center__statusbar yellow">
+              <div class="center__statusbar__left">
+                <img src="/img/loader.svg" alt="" />
+                <span id="console__status">Waiting for launch...</span>
+              </div>
+              <div class="center__statusbar__right">
+                <img src="/img/search.svg" alt="" />
+                <span>Search...</span>
+              </div>
+            </div>
+            <div class="center__console"></div>
+          </div>
+
+          <div class="center__success hide" id="center3top">
+            <div class="center__success__top">
+              <div class="center__success__top__left">Bot is working</div>
+              <div class="center__success__top__right">
+                Started at <span id="startedTime">12:04</span>
+              </div>
+            </div>
+
+            <div class="center__success__stats">
+              <div class="center__success__stats__item">
+                <div class="center__success__stats__item--top">
+                  Transactions
+                </div>
+                <div class="center__success__stats__item--bottom" id="totalTx">
+                  00
+                </div>
+              </div>
+              <div class="center__success__stats__item">
+                <div class="center__success__stats__item--top">
+                  Working time
+                </div>
+                <div
+                  class="center__success__stats__item--bottom"
+                  id="workingTime"
+                >
+                  00<span>hr</span> 00<span>m</span>
+                </div>
+              </div>
+              <div class="center__success__stats__item">
+                <div class="center__success__stats__item--top">Profit</div>
+                <div class="center__success__stats__item--bottom">
+                  <t id="totalProfit">0.00</t><span>SOL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="center__success__button">
+              <div class="center__success__button__inner" onclick="withdraw()">
+                Withdraw
+              </div>
+            </div>
+          </div>
+          <div class="center__inner small hide" id="center3bottom">
+            <div class="center__statusbar">
+              <div class="center__statusbar__left">
+                <img src="/img/loader.svg" alt="" />
+                <span>Running...</span>
+              </div>
+              <div class="center__statusbar__right">
+                <img src="/img/search.svg" alt="" />
+                <span>Search...</span>
+              </div>
+            </div>
+            <div class="center__console"></div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right__inner">
+            <div class="right__line">Transactions</div>
+
+            <div class="right__table">
+              <div class="right__table__header">
+                <div class="right__table__header--item hash">Hash</div>
+                <div class="right__table__header--item type">Type</div>
+                <div class="right__table__header--item coin">
+                  <img src="/img/sol_small.svg" alt="" srcset="" />Coin
+                </div>
+                <div class="right__table__header--item profit">
+                  <img src="/img/usd.svg" alt="" srcset="" />Profit
+                </div>
+              </div>
+              <div class="right__table__body" id="rightTable">
+                <div class="right__table__body__line text">
+                  No transactions found. Please start the bot.
+                </div>
+                <!-- <div class="right__table__body__line">
+                  <div class="right__table__body__line--item hash">
+                    abBg...erge23
+                  </div>
+                  <div class="right__table__body__line--item type">Swap</div>
+                  <div class="right__table__body__line--item coin">JUP</div>
+                  <div class="right__table__body__line--item profit">
+                    1.234 SOL
+                  </div>
+                </div>
+                 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="modal hide" id="modal">
+      <div class="modal__inner">
+        <div class="modal__left">
+          <div class="modal__left__logo">
+            <img src="/img/logo_white.svg" alt="" />
+            SNIPER CALLS BOT
+          </div>
+
+          <div class="modal__left__title">
+            Before you start, configure the bot
+          </div>
+
+          <div class="modal__left__inputs">
+            <div
+              class="modal__left__select"
+              onclick="openSelectProvider()"
+              id="selectProvider"
+            >
+              <label for="">Select wallet</label>
+              <div class="modal__left__select__input" style="cursor: pointer">
+                <span id="selectProviderText">Select Provider</span>
+                <img src="/img/select.svg" alt="" />
+
+                <div
+                  class="modal__left__select__input__drop hide"
+                  id="selectProviderDrop"
+                >
+                  <div
+                    class="modal__left__select__input select"
+                    onclick="connectPhantom()"
+                  >
+                    <span>Injected Provider - Phantom</span>
+                  </div>
+                  <!-- <div
+                    class="modal__left__select__input select"
+                    onclick="connectSolflare()"
+                  >
+                    <span>Injected Provider - Solflare</span>
+                  </div>
+                  <div
+                    class="modal__left__select__input select"
+                    onclick="connectOkx()"
+                  >
+                    <span>Injected Provider - Okx Wallet</span>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="modal__left__select">
+              <label for="">License key</label>
+              <input type="text" placeholder="" id="licenseKey" value="" />
+            </div>
+            <div class="modal__left__line">
+              <div class="modal__left__select">
+                <label for="">Transaction period (sec)</label>
+                <input type="text" value="1" id="transactionPeriod" />
+              </div>
+              <div class="modal__left__select">
+                <label for="">Fee multiplier</label>
+                <input type="text" value="1.5" id="feeMultiplier" />
+              </div>
+            </div>
+            <div class="modal__left__line">
+              <div class="modal__left__select">
+                <label for="">Slippage (%)</label>
+                <input type="text" value="3" id="slippage" />
+              </div>
+              <div class="modal__left__select">
+                <label for="">TTL (sec)</label>
+                <input type="text" value="30" id="ttl" />
+              </div>
+            </div>
+          </div>
+
+          <div class="modal__left__button" onclick="applyConfiguration()">
+            Apply
+          </div>
+        </div>
+        <div class="modal__right">
+          <div class="modal__right__top">Input config</div>
+
+          <textarea
+            id="config"
+            class="modal__right__textarea"
+            placeholder=""
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="/dist/main.js"></script>
+  </body>
+</html>

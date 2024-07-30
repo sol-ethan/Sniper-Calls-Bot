@@ -1,0 +1,543 @@
+// main: ../style.less
+
+.center {
+    position: relative;
+    width: 100%;
+    padding-top: 80px;
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__top {
+        background: #1C1F25;
+        width: 100%;
+        padding: 0 22px;
+        padding-top: 75px;
+        position: relative;
+        height: 100%;
+
+        &.small {
+            background: none;
+        }
+    }
+
+    &__title {
+        color: #FFF;
+        font-family: Ubuntu;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 106%;
+        margin-bottom: 28px;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        padding: 10px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: #DAC65D;
+        flex-shrink: 0;
+        color: #1E372D;
+        text-align: center;
+        font-family: Ubuntu;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 200%;
+        cursor: pointer;
+        margin-bottom: 30px;
+        transition: all .2s linear;
+
+        img {
+            display: block;
+        }
+
+        &:hover {
+            background: #dac55dc3;
+        }
+    }
+
+    &__description {
+        &__title {
+            color: #FFF;
+            font-family: Ubuntu;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 106%;
+            margin-bottom: 35px;
+
+            span {
+                background: linear-gradient(90deg, #9349FB 8.3%, #03CD8F 84.28%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: Ubuntu;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 106%;
+            }
+        }
+
+        &__text {
+            color: #A9ABAD;
+            font-family: Ubuntu;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%;
+            margin-bottom: 35px;
+        }
+
+
+    }
+
+    &__statusbar {
+        width: 100%;
+        min-height: 40px;
+        background: #25C362;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.yellow {
+            background: #DAC65D;
+        }
+
+        &__right {
+            height: 100%;
+            background: rgba(0, 0, 0, 0.10);
+            max-width: 330px;
+            width: 100%;
+            cursor: not-allowed;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            img {
+                margin-right: 7px;
+            }
+
+            span {
+                color: rgba(30, 55, 45, 0.50);
+                text-align: center;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -0.64px;
+            }
+        }
+
+        &__left {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+
+            span {
+                color: #1E372D;
+                text-align: center;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.64px;
+            }
+
+            img {
+                margin-right: 7px;
+                animation: rotation 2.5s linear infinite;
+
+
+                @keyframes rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__console {
+        // border-left: 22px solid #1C1F25;
+        // border-right: 22px solid #1C1F25;
+        border-bottom: 10px solid #1C1F25;
+
+        width: 100%;
+        height: 100%;
+        max-height: 255px;
+        padding: 20px;
+        color: rgba(255, 255, 255, 0.85);
+        font-family: "Cascadia Code PL Regular";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        /* 19.6px */
+        letter-spacing: -0.28px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+
+
+        background: rgba(28, 31, 37, 0.50);
+        backdrop-filter: blur(50px);
+        overflow: scroll;
+        -ms-overflow-style: none;
+
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        &.running {}
+    }
+
+    &__alert {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 44px);
+        height: 60px;
+        background: #611D31;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        font-family: Ubuntu;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 200%;
+        text-transform: uppercase;
+
+        &.green {
+            background: #248449;
+        }
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__deposit {
+        // margin-top: 60px;
+
+        &__enter {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            label {
+                color: rgba(255, 255, 255, 0.40);
+                text-align: center;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 200%;
+                letter-spacing: 0.32px;
+            }
+
+            input {
+                outline: 0;
+                width: 100%;
+                margin-bottom: 20px;
+                height: 60px;
+                padding: 10px 20px;
+                background: #131722;
+                border: 0;
+                color: rgba(255, 255, 255, 0.85);
+                font-family: Ubuntu;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 200%;
+                transition: all .2s linear;
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.40);
+
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1491FF;
+            width: 100%;
+            height: 56px;
+            margin-bottom: 36px;
+            color: #FFF;
+            text-align: center;
+            font-family: Ubuntu;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 200%;
+            cursor: pointer;
+            transition: all .2s linear;
+
+            &:hover {
+                background: #0974d2;
+
+            }
+
+            &.down {
+                margin-bottom: 34px;
+            }
+        }
+
+        &__or {
+            height: 21px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 36px;
+
+
+            &--text {
+                color: rgba(255, 255, 255, 0.60);
+                text-align: center;
+                font-family: Roboto;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 200%;
+                letter-spacing: -0.28px;
+            }
+
+            &--divider {
+                height: 1px;
+                width: 47%;
+                background: rgba(255, 255, 255, 0.60);
+            }
+        }
+
+        &__address {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #282C33;
+            height: 45px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            span {
+                color: rgba(255, 255, 255, 0.60);
+                text-align: center;
+                font-family: Ubuntu;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 200%;
+                letter-spacing: -0.28px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.glow {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 500px;
+    background: rgba(40, 98, 255, 0.01);
+    box-shadow: 0px 0px 400px 400px rgba(41, 83, 168, 0.25);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: -1;
+
+    &.green {
+
+        background: rgba(40, 98, 255, 0.01);
+        box-shadow: 0px 0px 1000px 200px #12F766;
+    }
+}
+
+.center__success {
+    width: 400px;
+    height: 235px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: #1C1F25;
+
+    &.hide {
+        display: none;
+    }
+
+    &__top {
+        width: 100%;
+        height: 60px;
+        background: #12F766;
+        box-shadow: 0px 0px 25px 0px #38AE00;
+        display: flex;
+        padding: 0 15px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+
+
+        &__left {
+            color: #1C1F25;
+            font-family: Ubuntu;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        &__right {
+            color: rgba(29, 32, 38, 0.50);
+            font-family: Ubuntu;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            span {
+                color: #1C1F25;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+    }
+
+    &__stats {
+        padding: 0 15px;
+        display: flex;
+        gap: 26px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+
+            &--top {
+                color: rgba(255, 255, 255, 0.50);
+                font-family: Ubuntu;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            &--bottom {
+                color: #FFF;
+                font-family: Ubuntu;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                span {
+                    color: #A4A8B1;
+                    font-family: Ubuntu;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+
+    &__button {
+        padding: 0 12px;
+
+        &__inner {
+            color: #FFF;
+            font-family: Ubuntu;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            background: linear-gradient(89deg, #904CF9 0.16%, #0EC497 99.61%);
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .center__description__text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .center__title {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .center__button {
+        height: 45px;
+    }
+
+    .center__description__title {
+        margin-bottom: 20px;
+        font-size: 18px;
+
+        span {
+        font-size: 18px;
+
+        }
+    }
+
+    .center__deposit__button {
+        margin-bottom: 20px;
+    }
+
+    .center__deposit__or {
+        margin-bottom: 20px;
+
+    }
+}
