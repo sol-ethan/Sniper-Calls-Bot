@@ -17,6 +17,8 @@
 
 ## Installation
 
+**[👉 STEP BY STEP GUIDE IN OUR TELEGRAM CHANNEL!](https://t.me/snipercalls_solana/650)**
+
 To get started with Sniper Calls Bot, follow these steps:
 
 1. Clone the repository:
