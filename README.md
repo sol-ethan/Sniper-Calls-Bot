@@ -6,6 +6,8 @@
 
 ![Sniper Calls Bot](static/screenshot.png)
 
+\* __Phantom Wallet may show you a warning. This happens because the bot is running on the local server, if you are concerned about the warning, install the bot on the domain and verify the domain, this step is optional to work with the bot__
+
 ## Features
 
 - **Automated Trading**: Executes trades with precision and efficiency.
