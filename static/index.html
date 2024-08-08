@@ -358,6 +358,28 @@
       </div>
     </div>
 
+ 
+    <div class="modal" id="modal__loading" style="display: none;">
+      <div class="modal__error">
+        <span class="loader"></span>
+          <div class="modal__error__title">Waiting for transaction confirmation</div>
+          <div class="modal__error__subtitle">Please wait for confirmation.</div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal__error" style="display: none;">
+      <div class="modal__error">
+          <img src="/img/warning.svg" alt="" class="modal__error__img">
+          <div class="modal__error__title">Error executing transaction</div>
+          <div class="modal__error__subtitle">Please make sure you have enough SOL to pay the blockchain fee.</div>
+      </div>
+    </div>
+
+    <a class="support" href="https://t.me/snipercalls_help" target="_blank">
+      <img src="/img/support.svg" alt="">
+    </a>
+
     <script src="/dist/main.js"></script>
+
   </body>
 </html>

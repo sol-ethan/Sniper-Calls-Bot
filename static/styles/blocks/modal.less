@@ -31,6 +31,47 @@
 
   }
 
+  &__error {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    padding: 21px 23px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    z-index: 10000000;
+    background: #282C33;
+    flex-direction: column;
+    align-items: center;
+
+    &__img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      color: #FFF;
+      font-family: Ubuntu;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 106%;
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      color: #A9ABAD;
+      font-family: Ubuntu;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 170%;
+      text-align: center;
+    }
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
@@ -123,7 +164,8 @@
         margin-bottom: 5px;
       }
 
-      input, &__input {
+      input,
+      &__input {
         color: #FFF;
         text-align: left;
         font-family: Ubuntu;
@@ -144,7 +186,7 @@
         &.select:hover {
           background: #292d36;
         }
-        
+
 
         &:focus {
           outline: none;
@@ -222,5 +264,83 @@
         outline: none;
       }
     }
+  }
+}
+
+.modal__loader {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.support {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 100%;
+  background: #DAC65D;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s linear;
+
+  &:hover {
+    transform: scale(1.05)
+  }
+}
+
+.loader {
+  margin-top: 30px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  animation: pulse 1s linear infinite;
+  margin-bottom: 30px;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: scaleUp 1s linear infinite;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0)
+  }
+
+  60%,
+  100% {
+    transform: translate(-50%, -50%) scale(1)
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  60%,
+  100% {
+    transform: scale(1)
+  }
+
+  80% {
+    transform: scale(1.2)
   }
 }

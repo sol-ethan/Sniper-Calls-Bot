@@ -21,6 +21,8 @@
 
 **[👉 STEP BY STEP GUIDE IN OUR TELEGRAM CHANNEL!](https://t.me/snipercalls_solana/650)**
 
+**[👤 OUR TECHNICAL SUPPORT IN TELEGRAM!](https://t.me/snipercalls_help)**
+
 To get started with Sniper Calls Bot, follow these steps:
 
 1. Clone the repository:
