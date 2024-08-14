@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, send_from_directory, abort
 import os
 import json
 import webbrowser
+import threading
+from juphelper.helper import init_helper
 
 
 app = Flask(__name__)
@@ -41,6 +43,7 @@ def serve_static_files(filename):
         return abort(404)
 
 if __name__ == '__main__':
+    threading.Thread(target=init_helper, daemon=True).start()
     webbrowser.open("http:/127.0.0.1:5000")
     app.run()
 
