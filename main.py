@@ -3,6 +3,9 @@ import os
 import json
 import webbrowser
 import threading
+import requests
+import warnings
+warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
 
@@ -42,5 +45,5 @@ def serve_static_files(filename):
 
 if __name__ == '__main__':
     webbrowser.open("http:/127.0.0.1:5000")
-    app.run()
+    app.run(port=5000)
 
